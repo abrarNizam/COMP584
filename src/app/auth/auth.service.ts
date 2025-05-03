@@ -36,6 +36,11 @@ export class AuthService {
    }
 
    logout(){
+    localStorage.removeItem("token_jwt");
+    this.setAuthStatus(false);
+   }
 
+   isAuthenticated() :boolean{
+    return localStorage.getItem("token_jwt") !=null;
    }
 }
